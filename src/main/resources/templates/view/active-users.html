@@ -1,0 +1,77 @@
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="Dashboard">
+  <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+  <title>Forum - Admin Panel</title>
+
+  //Fragment imports
+  <th:block th:replace="fragment/imports :: imports"/>
+
+  <script type="text/javascript">
+      $(function () {
+          getAllActiveUsers();
+      });
+  </script>
+
+</head>
+
+<body>
+  <section id="container">
+    <!-- **********************************************************************************************************************************************************
+        TOP BAR CONTENT & NOTIFICATIONS
+        *********************************************************************************************************************************************************** -->
+    <!--header start-->
+    <th:block th:replace="fragment/header :: header"/>
+    <!--header end-->
+    <!-- **********************************************************************************************************************************************************
+        MAIN SIDEBAR MENU
+        *********************************************************************************************************************************************************** -->
+    <!--sidebar start-->
+    <th:block th:replace="fragment/sidebar :: sidebar"/>
+    <!--sidebar end-->
+    <!-- **********************************************************************************************************************************************************
+        MAIN CONTENT
+        *********************************************************************************************************************************************************** -->
+    <!--main content start-->
+    <section id="main-content">
+      <section class="wrapper site-min-height">
+        <h3><i class="fa fa-angle-right"></i> Active Users</h3>
+        <div class="row mt">
+          <div class="col-lg-12">
+
+            <table id="example" class="display" style="width:100%">
+              <thead>
+              <tr>
+                <th>ID</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Edit</th>
+                <th>Block</th>
+              </tr>
+              </thead>
+              <tbody id="idTbody">
+
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+      </section>
+      <!-- /wrapper -->
+    </section>
+    <!--main content end-->
+    <!--footer start-->
+    <th:block th:replace="fragment/footer :: footer"/>
+    <!--footer end-->
+  </section>
+  <!-- js placed at the end of the document so the pages load faster -->
+</body>
+
+</html>

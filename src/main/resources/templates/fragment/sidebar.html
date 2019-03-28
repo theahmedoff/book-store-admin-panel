@@ -1,0 +1,39 @@
+
+<aside xmlns:th="http://www.thymeleaf.org" th:frgment="sidebar">
+    <div id="sidebar" class="nav-collapse ">
+        <!-- sidebar menu start-->
+        <ul class="sidebar-menu" id="nav-accordion">
+            <!--<p class="centered"><a th:href="@{/profile}"><img th:src="@{/img/ui-sam.jpg}" class="img-circle" width="80"></a></p>-->
+            <!--<h5 class="centered">Sam Soffes</h5>-->
+            <li class="sub-menu">
+                <!--<a href="javascript:;">-->
+                    <!--<i class="fa fa-book"></i>-->
+                    <!--<span>Topics</span>-->
+                <!--</a>-->
+                <ul class="sub">
+                    <li><a th:href="@{/}">Active Topics</a></li>
+                    <li><a th:href="@{/pending-topics}">Pending Topics</a></li>
+                </ul>
+            </li>
+            <li class="sub-menu">
+                <!--<a href="javascript:;">-->
+                    <!--<i class="fa fa-tasks"></i>-->
+                    <!--<span>Users</span>-->
+                <!--</a>-->
+                <ul class="sub">
+                    <li><a th:href="@{/active-users}">Active Users</a></li>
+                    <li><a th:href="@{/blocked-users}">Blocked Users</a></li>
+                </ul>
+            </li>
+            <li>
+                <a th:href="@{/inbox}">
+                    <i class="fa fa-envelope"></i>
+                    <span>Mail </span>
+                    <span class="label label-theme pull-right mail-info">2</span>
+                </a>
+            </li>
+        </ul>
+        <!-- sidebar menu end-->
+    </div>
+</aside>
+<!--sidebar end-->
