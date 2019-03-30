@@ -1,5 +1,5 @@
-
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -9,27 +9,8 @@
   <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
   <title>Dashio - Bootstrap Admin Template</title>
 
-  //Fragment imports
   <th:block th:replace="fragment/imports :: imports"/>
 
-  <!-- Favicons -->
-  <link th:href="@{/img/favicon.png}" rel="icon">
-  <link th:href="@{/img/apple-touch-icon.png}" rel="apple-touch-icon">
-
-  <!-- Bootstrap core CSS -->
-  <link th:href="@{/lib/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
-  <!--external css-->
-  <link th:href="@{/lib/font-awesome/css/font-awesome.css}" rel="stylesheet" />
-  <!-- Custom styles for this template -->
-  <link th:href="@{/css/style.css}" rel="stylesheet">
-  <link th:href="@{/css/style-responsive.css}" rel="stylesheet">
-
-  <!-- =======================================================
-    Template Name: Dashio
-    Template URL: https://templatemag.com/dashio-bootstrap-admin-template/
-    Author: TemplateMag.com
-    License: https://templatemag.com/license/
-  ======================================================= -->
 </head>
 
 <body>
@@ -76,7 +57,7 @@
               <!-- /col-md-4 -->
               <div class="col-md-4 centered">
                 <div class="profile-pic">
-                  <p><img src="${pageContext.request.contextPath}/resources/img/ui-sam.jpg" class="img-circle"></p>
+                  <p><img src="img/ui-sam.jpg" class="img-circle"></p>
                   <p>
                     <button class="btn btn-theme"><i class="fa fa-check"></i> Follow</button>
                     <button class="btn btn-theme02">Add</button>
@@ -386,13 +367,13 @@
     <!--footer end-->
   </section>
   <!-- js placed at the end of the document so the pages load faster -->
-  <script src="${pageContext.request.contextPath}/resources/lib/jquery/jquery.min.js"></script>
-  <script src="${pageContext.request.contextPath}/resources/lib/bootstrap/js/bootstrap.min.js"></script>
-  <script class="include" type="text/javascript" src="${pageContext.request.contextPath}/resources/lib/jquery.dcjqaccordion.2.7.js"></script>
-  <script src="${pageContext.request.contextPath}/resources/lib/jquery.scrollTo.min.js"></script>
-  <script src="${pageContext.request.contextPath}/resources/lib/jquery.nicescroll.js" type="text/javascript"></script>
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+  <script class="include" type="text/javascript" src="lib/jquery.dcjqaccordion.2.7.js"></script>
+  <script src="lib/jquery.scrollTo.min.js"></script>
+  <script src="lib/jquery.nicescroll.js" type="text/javascript"></script>
   <!--common script for all pages-->
-  <script src="${pageContext.request.contextPath}/resources/lib/common-scripts.js"></script>
+  <script src="lib/common-scripts.js"></script>
   <!--script for this page-->
   <!-- MAP SCRIPT - ALL CONFIGURATION IS PLACED HERE - VIEW OUR DOCUMENTATION FOR FURTHER INFORMATION -->
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>

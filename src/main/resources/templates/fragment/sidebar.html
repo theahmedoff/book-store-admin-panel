@@ -1,35 +1,83 @@
 
-<aside xmlns:th="http://www.thymeleaf.org" th:frgment="sidebar">
+<aside xmlns:th="http://www.thymeleaf.org" th:fragment="sidebar">
     <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-            <!--<p class="centered"><a th:href="@{/profile}"><img th:src="@{/img/ui-sam.jpg}" class="img-circle" width="80"></a></p>-->
-            <!--<h5 class="centered">Sam Soffes</h5>-->
+            <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
+            <h5 class="centered">Sam Soffes</h5>
+            <li class="mt">
+                <a class="active" href="index.html">
+                    <i class="fa fa-dashboard"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
             <li class="sub-menu">
-                <!--<a href="javascript:;">-->
-                    <!--<i class="fa fa-book"></i>-->
-                    <!--<span>Topics</span>-->
-                <!--</a>-->
+                <a href="javascript:;">
+                    <i class="fa fa-desktop"></i>
+                    <span>UI Elements</span>
+                </a>
                 <ul class="sub">
-                    <li><a th:href="@{/}">Active Topics</a></li>
-                    <li><a th:href="@{/pending-topics}">Pending Topics</a></li>
+                    <li><a th:href="@{/font}">Font Awesome</a></li>
                 </ul>
             </li>
             <li class="sub-menu">
-                <!--<a href="javascript:;">-->
-                    <!--<i class="fa fa-tasks"></i>-->
-                    <!--<span>Users</span>-->
-                <!--</a>-->
+                <a href="javascript:;">
+                    <i class="fa fa-book"></i>
+                    <span>Extra Pages</span>
+                </a>
                 <ul class="sub">
-                    <li><a th:href="@{/active-users}">Active Users</a></li>
-                    <li><a th:href="@{/blocked-users}">Blocked Users</a></li>
+                    <li><a href="blank.html">Blank Page</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="lock_screen.html">Lock Screen</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="invoice.html">Invoice</a></li>
+                    <li><a href="pricing_table.html">Pricing Table</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="404.html">404 Error</a></li>
+                    <li><a href="500.html">500 Error</a></li>
+                </ul>
+            </li>
+            <li class="sub-menu">
+                <a href="javascript:;">
+                    <i class="fa fa-book"></i>
+                    <span>Book</span>
+                </a>
+                <ul class="sub">
+                    <li><a href="basic_table.html">All Book</a></li>
+                    <li><a href="basic_table.html">Add Book</a></li>
+                    <li><a href="responsive_table.html">Delete Book</a></li>
+                    <li><a href="advanced_table.html">Edit Book</a></li>
+                </ul>
+            </li>
+            <li class="sub-menu">
+                <a href="javascript:;">
+                    <i class="fa fa-users"></i>
+                    <span>Users</span>
+                </a>
+                <ul class="sub">
+                    <li><a href="basic_table.html">Active User</a></li>
+                    <li><a href="responsive_table.html">Inactive User</a></li>
+                    <li><a href="advanced_table.html">Advanced Table</a></li>
                 </ul>
             </li>
             <li>
-                <a th:href="@{/inbox}">
+                <a th:href="@{/profile}">
+                    <i class="fa fa-user"></i>
+                    <span>Profile </span>
+                    <span class="label label-theme pull-right mail-info">2</span>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{inbox}">
                     <i class="fa fa-envelope"></i>
                     <span>Mail </span>
                     <span class="label label-theme pull-right mail-info">2</span>
+                </a>
+            </li>
+            <li class="sub-menu">
+                <a href="google_maps.html">
+                    <i class="fa fa-map-marker"></i>
+                    <span>Google Maps </span>
                 </a>
             </li>
         </ul>
