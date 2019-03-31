@@ -1,10 +1,19 @@
 package book.store.admin.panel.controller;
 
+import book.store.admin.panel.model.Book;
+import book.store.admin.panel.service.BookService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
 
 @Controller
 public class NavigationController {
+
+    @Autowired
+    private BookService bookService;
 
     @RequestMapping("/")
     public String indexPage(){
@@ -12,7 +21,10 @@ public class NavigationController {
     }
 
     @RequestMapping("/all-book")
-    public String blankPage(){
+    public String allBookPage(Model model){
+        List<Book> books = bookService.getAllBook();
+        System.out.println(books);
+        model.addAttribute("allBook", books);
         return "view/all-book";
     }
 
