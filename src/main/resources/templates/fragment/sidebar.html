@@ -6,7 +6,7 @@
             <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
             <h5 class="centered">Sam Soffes</h5>
             <li class="mt">
-                <a class="active" href="index.html">
+                <a class="active" th:href="@{/}">
                     <i class="fa fa-dashboard"></i>
                     <span>Dashboard</span>
                 </a>
@@ -26,15 +26,10 @@
                     <span>Extra Pages</span>
                 </a>
                 <ul class="sub">
-                    <li><a href="blank.html">Blank Page</a></li>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="lock_screen.html">Lock Screen</a></li>
-                    <li><a href="profile.html">Profile</a></li>
-                    <li><a href="invoice.html">Invoice</a></li>
-                    <li><a href="pricing_table.html">Pricing Table</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="404.html">404 Error</a></li>
-                    <li><a href="500.html">500 Error</a></li>
+                    <li><a th:href="@{/login}">Login</a></li>
+                    <li><a th:href="@{/lock-screen}">Lock Screen</a></li>
+                    <li><a th:href="@{/404}">404 Error</a></li>
+                    <li><a th:href="@{/500}">500 Error</a></li>
                 </ul>
             </li>
             <li class="sub-menu">
@@ -43,10 +38,10 @@
                     <span>Book</span>
                 </a>
                 <ul class="sub">
-                    <li><a href="basic_table.html">All Book</a></li>
-                    <li><a href="basic_table.html">Add Book</a></li>
-                    <li><a href="responsive_table.html">Delete Book</a></li>
-                    <li><a href="advanced_table.html">Edit Book</a></li>
+                    <li><a th:href="@{/all-book}">All Book</a></li>
+                    <li><a th:href="@{/all-book}">Add Book</a></li>
+                    <li><a th:href="@{/all-book}">Delete Book</a></li>
+                    <li><a th:href="@{/all-book}">Edit Book</a></li>
                 </ul>
             </li>
             <li class="sub-menu">
@@ -55,9 +50,9 @@
                     <span>Users</span>
                 </a>
                 <ul class="sub">
-                    <li><a href="basic_table.html">Active User</a></li>
-                    <li><a href="responsive_table.html">Inactive User</a></li>
-                    <li><a href="advanced_table.html">Advanced Table</a></li>
+                    <li><a th:href="@{/profile}">Active User</a></li>
+                    <li><a th:href="@{/profile}">Inactive User</a></li>
+                    <li><a th:href="@{/profile}">Advanced Table</a></li>
                 </ul>
             </li>
             <li>
@@ -75,7 +70,7 @@
                 </a>
             </li>
             <li class="sub-menu">
-                <a href="google_maps.html">
+                <a th:href="@{/maps}">
                     <i class="fa fa-map-marker"></i>
                     <span>Google Maps </span>
                 </a>

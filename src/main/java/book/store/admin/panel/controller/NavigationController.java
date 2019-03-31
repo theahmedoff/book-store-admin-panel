@@ -11,24 +11,14 @@ public class NavigationController {
         return "view/index";
     }
 
-    @RequestMapping("/blank")
+    @RequestMapping("/all-book")
     public String blankPage(){
-        return "view/blank";
+        return "view/all-book";
     }
 
     @RequestMapping("/login")
     public String loginPage(){
         return "view/login";
-    }
-
-    @RequestMapping("/500")
-    public String page500(){
-        return "view/500";
-    }
-
-    @RequestMapping("/404")
-    public String page404(){
-        return "view/404";
     }
 
     @RequestMapping("/inbox")
@@ -58,12 +48,27 @@ public class NavigationController {
 
     @RequestMapping("/lock-screen")
     public String lockScreenPage(){
-        return "view/lock_screen";
+        return "view/lock-screen";
     }
 
     @RequestMapping("/font")
     public String fontPage(){
         return "view/font-awesome";
+    }
+
+    @RequestMapping("/maps")
+    public String mapsPage(){
+        return "view/google-maps";
+    }
+
+    @RequestMapping("/500")
+    public String page500(){
+        return "view/500";
+    }
+
+    @RequestMapping("/404")
+    public String page404(){
+        return "view/404";
     }
 
 
