@@ -24,7 +24,7 @@ public class NavigationController {
     public String allBookPage(Model model){
         List<Book> books = bookService.getAllBook();
         System.out.println(books);
-        model.addAttribute("allBook", books);
+        model.addAttribute("books", books);
         return "view/all-book";
     }
 

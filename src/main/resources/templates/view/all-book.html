@@ -59,10 +59,10 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <th:block th:each="all : ${allBook}">
+                        <th:block th:each="book: ${books}">
                             <tr>
-                                <td >Thomas Hardy</td>
-                                <td ">thomashardy@mail.com</td>
+                                <td th:text="${all.getId}">Thomas Hardy</td>
+                                <td >thomashardy@mail.com</td>
                                 <td >89 Chiaroscuro Rd, Portland, USA</td>
                                 <td >(171) 555-2222</td>
                                 <td >(171) 555-2222</td>
