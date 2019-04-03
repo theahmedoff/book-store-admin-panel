@@ -20,7 +20,7 @@ public class BookRepositoryImpl implements BookRepository {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    private static final String GET_ALL_BOOK_SQL = "select b.id_book, b.image_path, b.title, b.write_date, a.id_author, a.full_name from book b inner join author a on b.id_author = a.id_author";
+    private static final String GET_ALL_BOOK_SQL = "select b.id_book, b.first_image_path, b.second_image_path, b.desc, b.title, b.write_date, b.language, a.id_author, a.full_name from book b inner join author a on b.id_author = a.id_author";
 
     @Override
     public List<Book> getAllBook() {
@@ -32,7 +32,10 @@ public class BookRepositoryImpl implements BookRepository {
                 while (rs.next()){
                     Book book = new Book();
                     book.setIdBook(rs.getInt("id_book"));
-                    book.setImagePath(rs.getString("image_path"));
+                    book.setImagePath1(rs.getString("first_image_path"));
+                    book.setImagePath2(rs.getString("second_image_path"));
+                    book.setLanguage(rs.getString("language"));
+                    book.setDesc(rs.getString("desc"));
                     book.setTitle(rs.getString("title"));
                     book.setWriteDate(rs.getDate("write_date").toLocalDate());
 
