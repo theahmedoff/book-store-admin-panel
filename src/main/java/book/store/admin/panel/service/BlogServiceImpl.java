@@ -17,12 +17,21 @@ public class BlogServiceImpl implements BlogService {
 
     @Override
     public List<Blog> getAllBlog() {
-        System.out.println(blogRepository.getAllBlog());
         return blogRepository.getAllBlog();
     }
 
     @Override
     public void addBlog(Blog blog) {
         blogRepository.addBlog(blog);
+    }
+
+    @Override
+    public void editBlogById(Blog blog) {
+        blogRepository.editBlogById(blog);
+    }
+
+    @Override
+    public void deleteBlogById(int id) {
+        blogRepository.deleteBlogById(id);
     }
 }

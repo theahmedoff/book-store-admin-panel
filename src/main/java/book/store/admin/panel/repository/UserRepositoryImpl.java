@@ -8,6 +8,7 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.ResultSetExtractor;
+import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Repository;
 
 import java.sql.ResultSet;
@@ -21,7 +22,39 @@ public class UserRepositoryImpl implements UserRepository {
     private JdbcTemplate jdbcTemplate;
 
     private static final String GET_USER_BY_USERNAME_SQL = "select * from user u inner join role r on u.id_role = r.id_role left join wishlist w on u.id_user = w.id_user where u.username = ?";
+    private static final String GET_USER_BY_STATUS_SQL = "select u.id_user, u.name, u.surname, u.username, u.email, u.status, r.id_role, r.role_type from user u inner join role r on u.id_role = r.id_role where u.status = ?";
+    private static final String GET_ALL_USER_SQL = "select u.id_user, u.name, u.surname, u.username, u.email, u.status, r.id_role, r.role_type from user u inner join role r on u.id_role = r.id_role";
 
+    @Override
+    public List<User> getAllUser() {
+        List<User> users = jdbcTemplate.query(GET_ALL_USER_SQL, new Object[]{}, new ResultSetExtractor<List<User>>() {
+            @Nullable
+            @Override
+            public List<User> extractData(ResultSet rs) throws SQLException, DataAccessException {
+                List<User> list = new ArrayList<>();
+                while (rs.next()) {
+                    User user = new User();
+                    user.setIdUser(rs.getInt("id_user"));
+                    user.setName(rs.getString("name"));
+                    user.setSurname(rs.getString("surname"));
+                    user.setUsername(rs.getString("username"));
+                    user.setEmail(rs.getString("email"));
+                    user.setStatus(rs.getInt("status"));
+
+                    Role role = new Role();
+                    role.setIdRole(rs.getInt("id_role"));
+                    role.setRoleType(rs.getString("role_type"));
+                    user.setRole(role);
+
+                    list.add(user);
+                }
+                return list;
+            }
+        });
+        System.out.println("User---------------");
+        System.out.println(users);
+        return users;
+    }
 
     @Override
     public User getUserByUsername(String username) {
@@ -55,5 +88,36 @@ public class UserRepositoryImpl implements UserRepository {
             }
         });
         return list.get(0);
+    }
+
+    @Override
+    public List<User> getUserByStatus(int status) {
+        List<User> users = jdbcTemplate.query(GET_USER_BY_STATUS_SQL, new Object[]{status}, new ResultSetExtractor<List<User>>() {
+            @Nullable
+            @Override
+            public List<User> extractData(ResultSet rs) throws SQLException, DataAccessException {
+                List<User> list = new ArrayList<>();
+                while (rs.next()) {
+                    User user = new User();
+                    user.setIdUser(rs.getInt("id_user"));
+                    user.setName(rs.getString("name"));
+                    user.setSurname(rs.getString("surname"));
+                    user.setUsername(rs.getString("username"));
+                    user.setEmail(rs.getString("email"));
+                    user.setStatus(rs.getInt("status"));
+
+                    Role role = new Role();
+                    role.setIdRole(rs.getInt("id_role"));
+                    role.setRoleType(rs.getString("role_type"));
+                    user.setRole(role);
+
+                    list.add(user);
+                }
+                return list;
+            }
+        });
+        System.out.println("User---------------");
+        System.out.println(users);
+        return users;
     }
 }

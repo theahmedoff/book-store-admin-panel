@@ -22,4 +22,19 @@ public class BookServiceImpl implements BookService {
     public List<Book> getAllBook() {
         return bookRepository.getAllBook();
     }
+
+    @Override
+    public void addBook(Book book) {
+        bookRepository.addBook(book);
+    }
+
+    @Override
+    public void editBook(Book book) {
+        bookRepository.editBook(book);
+    }
+
+    @Override
+    public void deleteBook(int id) {
+        bookRepository.deleteBook(id);
+    }
 }

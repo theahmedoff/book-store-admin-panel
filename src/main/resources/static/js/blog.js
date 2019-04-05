@@ -1,33 +1,11 @@
 $(function () {
-    var pageName = $('#pageName').val();
-    if (pageName === 'blogPage') {
-        console.log("success");
-        getBlogs();
-    }
+    getAllBlog();
 });
-
-
-function getBlogs() {
-    $.ajax({
-        type: 'GET',
-        url: '/get-all-blog',
-        dataType: 'html',
-        success: function (data) {
-            $('#table').html(data);
-        },
-        error: function () {
-            console.log('Error blog!')
-        }
-    })
-}
-
-
-
 
 function getAllBlog() {
     $.ajax({
         type: "GET",
-        url: "/get-all-blog",
+        url: "/blog/get-all-blog",
         data: "JSON",
         success: function (blogs) {
             $('#blog-content').empty();
@@ -38,7 +16,6 @@ function getAllBlog() {
                     '                                <td>' + blog.desc + '</td>\n' +
                     '                                <td>' + blog.shareDate + '</td>\n' +
                     '                                <td>' + blog.imagePath + '</td>\n' +
-                    '                                <td>' + blog.user.username + '</td>\n' +
                     '                                <td>\n' +
                     '                                    <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="fa fa-edit"\n' +
                     '                                                                                                     data-toggle="tooltip"\n' +
@@ -56,29 +33,3 @@ function getAllBlog() {
     })
 }
 
-
-
-
-// $(document).ready(function () {
-//     // Activate tooltip
-//     $('[data-toggle="tooltip"]').tooltip();
-//
-//     // Select/Deselect checkboxes
-//     var checkbox = $('table tbody input[type="checkbox"]');
-//     $("#selectAll").click(function () {
-//         if (this.checked) {
-//             checkbox.each(function () {
-//                 this.checked = true;
-//             });
-//         } else {
-//             checkbox.each(function () {
-//                 this.checked = false;
-//             });
-//         }
-//     });
-//     checkbox.click(function () {
-//         if (!this.checked) {
-//             $("#selectAll").prop("checked", false);
-//         }
-//     });
-// });

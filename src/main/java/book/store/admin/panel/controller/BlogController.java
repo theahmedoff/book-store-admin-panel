@@ -12,28 +12,20 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import java.util.List;
 
 @Controller
-@RequestMapping("/blog")
+
 public class BlogController {
 
     @Autowired
     private BlogService blogService;
 
-    @GetMapping("/get-all-blog")
+    @GetMapping("/blog/get-all-blog")
     @ResponseBody
-    public String getAllBlog(Model model){
+    public List<Blog> getAllBlog(){
         List<Blog> blogs = blogService.getAllBlog();
-        model.addAttribute("blogs", blogs);
 //        System.out.println(blogs);
-        return "view/all-blog";
+        return blogs;
     }
 
-    @PostMapping("/add-blog")
-    public String addBlog(@ModelAttribute("newBlog")Blog blog, RedirectAttributes redirectAttributes){
-
-        System.out.println(blog);
-
-        return "redirect:/blog";
-    }
 
 
 

@@ -6,10 +6,14 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public interface UserService extends UserDetailsService {
 
+    List<User> getAllUser();
     User getUserByUsername(String username);
+    List<User> getUserByStatus(int status);
 
     @Override
     UserDetails loadUserByUsername(String s) throws UsernameNotFoundException;

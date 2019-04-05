@@ -1,6 +1,5 @@
-<th:block xmlns:th="http://www.thymeleaf.org" th:fragment="imports">
 
-    <link rel="stylesheet" th:src="@{/js/vendor/jquery-3.2.1.min.js}">
+<th:block xmlns:th="http://www.thymeleaf.org" th:fragment="imports">
 
     <link th:href="@{/img/favicon.png}" rel="icon">
     <link th:href="@{/img/apple-touch-icon.png}" rel="apple-touch-icon">
@@ -20,10 +19,7 @@
     <link th:href="@{/css/style.css}" rel="stylesheet">
     <link th:href="@{/css/style-responsive.css}" rel="stylesheet">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <!--<script-->
-    <!--src="https://code.jquery.com/jquery-3.3.1.min.js"-->
-    <!--integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="-->
-    <!--crossorigin="anonymous"></script>-->
+
 
     <!-- js placed at the end of the document so the pages load faster -->
     <script th:src="@{/lib/bootstrap/js/bootstrap.min.js}"></script>
@@ -37,9 +33,16 @@
     <!--===============================================================================================-->
     <!--<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>-->
     <!--<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
-    <script th:src="@{js/blog.js}" type="text/javascript"></script>
 
 
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
 
+
+    <script type="text/javascript" th:src="@{/js/blog.js}"></script>
+    <script type="text/javascript" th:src="@{/js/book.js}"></script>
+    <script type="text/javascript" th:src="@{/js/user.js}"></script>
 
 </th:block>

@@ -9,4 +9,6 @@ import java.util.List;
 public interface BlogService {
     List<Blog> getAllBlog();
     void addBlog(Blog blog);
+    void editBlogById(Blog blog);
+    void deleteBlogById(int id);
 }

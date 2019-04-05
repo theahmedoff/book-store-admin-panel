@@ -8,4 +8,7 @@ import java.util.List;
 @Service
 public interface BookService {
     List<Book> getAllBook();
+    void addBook(Book book);
+    void editBook(Book book);
+    void deleteBook(int id);
 }

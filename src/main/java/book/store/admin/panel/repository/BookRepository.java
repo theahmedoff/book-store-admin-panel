@@ -10,4 +10,5 @@ public interface BookRepository {
     List<Book> getAllBook();
     void addBook(Book book);
     void editBook(Book book);
+    void deleteBook(int id);
 }

@@ -19,35 +19,26 @@ import java.util.List;
 public class NavigationController {
 
     @Autowired
-    private BookService bookService;
-    @Autowired
     private UserService userService;
-    @Autowired
-    private BlogService blogService;
 
     @RequestMapping("/")
     public String indexPage(){
         return "view/index";
     }
 
-    @RequestMapping("/all-book")
-    public String allBookPage(Model model){
-        List<Book> books = bookService.getAllBook();
-        model.addAttribute("books", books);
+    @RequestMapping("/book")
+    public String bookPage(){
         return "view/all-book";
     }
 
-    @RequestMapping("blog")
-    public String allBlogPage(Model model){
-        List<Blog> blogs = blogService.getAllBlog();
-        System.out.println(blogs);
-        model.addAttribute("blogs", blogs);
-        return "view/blog";
+    @RequestMapping("/blog")
+    public String blogPage(){
+        return "view/all-blog";
     }
 
-    @RequestMapping("add-blog")
-    public String allBlogPage(){
-        return "view/add-blog";
+    @RequestMapping("/user-active")
+    public String activeUserPage(){
+        return "view/active-user";
     }
 
     @RequestMapping("/login")

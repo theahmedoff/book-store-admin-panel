@@ -10,5 +10,7 @@ public interface BlogRepository {
 
     List<Blog> getAllBlog();
     void addBlog(Blog blog);
+    void editBlogById(Blog blog);
+    void deleteBlogById(int id);
 
 }

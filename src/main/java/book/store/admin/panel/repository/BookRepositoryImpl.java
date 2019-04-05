@@ -21,7 +21,9 @@ public class BookRepositoryImpl implements BookRepository {
     private JdbcTemplate jdbcTemplate;
 
     private static final String GET_ALL_BOOK_SQL = "select b.id_book, b.first_image_path, b.second_image_path, b.desc, b.title, b.write_date, b.language, a.id_author, a.full_name from book b inner join author a on b.id_author = a.id_author";
-    private static final String SET_BOOK_SQL = "insert into book(title, description, first_image_path, second_image_path, language, write_date, id_author) values(?, ?, ?, ?, ?, ?, ?)";
+    private static final String SET_BOOK_SQL = "insert into book(title, desc, first_image_path, second_image_path, language, write_date, id_author) values(?, ?, ?, ?, ?, ?, ?)";
+    private static final String DELETE_BOOK_BY_ID_SQL = "delete from book where id_book = ?";
+
 
     @Override
     public List<Book> getAllBook() {
@@ -50,7 +52,6 @@ public class BookRepositoryImpl implements BookRepository {
                 return list;
             }
         });
-        System.out.println(books);
         return books;
     }
 
@@ -62,5 +63,10 @@ public class BookRepositoryImpl implements BookRepository {
     @Override
     public void editBook(Book book) {
         
+    }
+
+    @Override
+    public void deleteBook(int id) {
+        jdbcTemplate.update(DELETE_BOOK_BY_ID_SQL, id);
     }
 }

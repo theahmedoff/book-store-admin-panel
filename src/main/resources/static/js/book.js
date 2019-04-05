@@ -1,25 +1,22 @@
 $(function () {
-    getUserByStatus();
+    getAllBooks();
 });
 
 
-function getUserByStatus() {
+function getAllBooks() {
     $.ajax({
         type: "GET",
-        url: "/get-all-users",
+        url: "/book/get-all-book",
         data: "JSON",
-        success: function (users) {
-            console.log(users);
-            $('#idTableUser').empty();
-            users.forEach(function (user) {
-                $('#idTableUser').append('                            <tr>\n' +
-                    '                                <td>' + user.idUser + '</td>\n' +
-                    '                                <td>' + user.name + '</td>\n' +
-                    '                                <td>' + user.surname + '</td>\n' +
-                    '                                <td>' + user.username + '</td>\n' +
-                    '                                <td>' + user.email + '</td>\n' +
-                    '                                <td>' + user.status + '</td>\n' +
-                    '                                <td>' + user.role.roleType + '</td>\n' +
+        success: function (books) {
+            $('#idTableBook').empty();
+            books.forEach(function (book) {
+                $('#idTableBook').append('                            <tr>\n' +
+                    '                                <td>' + book.idBook + '</td>\n' +
+                    '                                <td>' + book.title + '</td>\n' +
+                    '                                <td>' + book.imagePath + '</td>\n' +
+                    '                                <td>' + book.author.fullName + '</td>\n' +
+                    '                                <td>' + book.writeDate + '</td>\n' +
                     '                                <td>\n' +
                     '                                    <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="fa fa-edit"\n' +
                     '                                                                                                     data-toggle="tooltip"\n' +
@@ -35,4 +32,27 @@ function getUserByStatus() {
             console.log("Error get all blog function!")
         }
     })
+}
+
+
+function edit(id) {
+    $.ajax({
+        type: 'POST',
+        url: '/book/edit/' + id,
+        success
+    })
+}
+
+
+function deleteBook(id) {
+    $.ajax({
+        type: 'POST',
+        url: '/book/delete/' + id,
+        success: function () {
+            getAllBooks();
+
+            alert("Delete Book");
+        },
+    })
+
 }
