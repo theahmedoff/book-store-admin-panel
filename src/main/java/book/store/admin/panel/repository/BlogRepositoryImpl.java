@@ -21,7 +21,8 @@ public class BlogRepositoryImpl implements BlogRepository {
     private JdbcTemplate jdbcTemplate;
 
     //Sql Sorgular
-    private static final String GET_ALL_BLOG_SQL = "select b.id_blog, b.title, b.desc, b.share_date, b.image_path, u.id_user, u.username from blog b inner join user u on b.id_user = u.id_user";
+    private static final String GET_ALL_BLOG_SQL = "select b.id_blog, b.title, b.description, b.share_date, b.image_path, u.id_user, u.username from blog b inner join user u on b.id_user = u.id_user";
+    private static final String SET_BLOG_SQL = "insert into blog(title, description, share_date, image_path, id_user) values(?, ?, ?, ?, ?)";
 
     @Override
     public List<Blog> getAllBlog() {
@@ -34,7 +35,7 @@ public class BlogRepositoryImpl implements BlogRepository {
                     Blog blog = new Blog();
                     blog.setId(rs.getInt("id_blog"));
                     blog.setTitle(rs.getString("title"));
-                    blog.setDesc(rs.getString("desc"));
+                    blog.setDesc(rs.getString("description"));
                     blog.setShareDate(rs.getTimestamp("share_date").toLocalDateTime());
                     blog.setImagePath(rs.getString("image_path"));
                     User user = new User();
@@ -47,5 +48,10 @@ public class BlogRepositoryImpl implements BlogRepository {
             }
         });
         return blogs;
+    }
+
+    @Override
+    public void addBlog(Blog blog) {
+        jdbcTemplate.update(SET_BLOG_SQL, blog.getTitle(), blog.getDesc(), blog.getShareDate().toString(), blog.getImagePath(), blog.getUser().getIdUser());
     }
 }

@@ -20,4 +20,9 @@ public class BlogServiceImpl implements BlogService {
         System.out.println(blogRepository.getAllBlog());
         return blogRepository.getAllBlog();
     }
+
+    @Override
+    public void addBlog(Blog blog) {
+        blogRepository.addBlog(blog);
+    }
 }

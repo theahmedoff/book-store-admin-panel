@@ -1,3 +1,14 @@
+
+$(function () {
+    var pageName = $('#pageName').val();
+    if (pageName === 'blogPage') {
+        console.log("success");
+        //getBlogs();
+    }
+});
+
+
+
 function getAllActiveUsers() {
     $.ajax({
         url: '/us?action=getAllActiveUsers',

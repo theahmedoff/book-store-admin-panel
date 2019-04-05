@@ -8,4 +8,5 @@ import java.util.List;
 @Service
 public interface BlogService {
     List<Blog> getAllBlog();
+    void addBlog(Blog blog);
 }

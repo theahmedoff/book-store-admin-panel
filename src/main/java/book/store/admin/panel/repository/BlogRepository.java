@@ -9,5 +9,6 @@ import java.util.List;
 public interface BlogRepository {
 
     List<Blog> getAllBlog();
+    void addBlog(Blog blog);
 
 }

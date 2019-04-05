@@ -37,12 +37,17 @@ public class NavigationController {
         return "view/all-book";
     }
 
-    @RequestMapping("/all-blog")
+    @RequestMapping("blog")
     public String allBlogPage(Model model){
         List<Blog> blogs = blogService.getAllBlog();
         System.out.println(blogs);
         model.addAttribute("blogs", blogs);
-        return "view/all-blog";
+        return "view/blog";
+    }
+
+    @RequestMapping("add-blog")
+    public String allBlogPage(){
+        return "view/add-blog";
     }
 
     @RequestMapping("/login")
