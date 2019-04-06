@@ -1,5 +1,14 @@
 $(function () {
     getAllBooks();
+    $('#btnBookSave').click(function () {
+        // var titleBook = $('#titleBook').val();
+        // var descBook = $('#descBook').val();
+        // var firstImgBook = $('#firstImgBook').val();
+        // var secondImgBook = $('#secondImgBook').val();
+        // var authorIdBook = $('#authorIdBook').val();
+        // alert(titleBook + descBook + firstImgBook + secondImgBook + authorIdBook);
+        addBook();
+    })
 });
 
 
@@ -34,6 +43,25 @@ function getAllBooks() {
     })
 }
 
+function addBook() {
+    var titleBook = $('#titleBook').val();
+    var descBook = $('#descBook').val();
+    var firstImgBook = $('#firstImgBook').val();
+    var secondImgBook = $('#secondImgBook').val();
+    var authorIdBook = $('#authorIdBook').val();
+
+    $.ajax({
+        type: 'POST',
+        url: '/book/add-book',
+        data: {titleBook: titleBook, descBook: descBook, firstImgBook: firstImgBook, secondImgBook: secondImgBook, authorIdBook: authorIdBook},
+        success: function () {
+            alert("Success");
+        },
+        error: function () {
+            alert("Error")
+        }
+    })
+}
 
 function edit(id) {
     $.ajax({
@@ -54,5 +82,5 @@ function deleteBook(id) {
             alert("Delete Book");
         },
     })
-
 }
+

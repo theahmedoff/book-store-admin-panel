@@ -15,14 +15,14 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/user/get-user-by-status")
+//    @GetMapping("/user/get-user-by-status")
     public List<User> getUserByStatus(){
         List<User> users = userService.getUserByStatus(1);
         System.out.println(users);
         return users;
     }
 
-    @GetMapping("/get-all-users")
+//    @GetMapping("/get-all-users")
     public List<User> getAllUser(){
         List<User> users = userService.getAllUser();
         System.out.println(users);

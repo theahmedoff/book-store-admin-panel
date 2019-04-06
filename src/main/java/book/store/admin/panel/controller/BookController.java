@@ -8,11 +8,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
+import javax.websocket.server.PathParam;
 import java.util.List;
 
 @Controller
@@ -26,6 +24,20 @@ public class BookController {
     public List<Book> getAllBooks(){
         List<Book> books = bookService.getAllBook();
         return books;
+    }
+
+    @PostMapping("/book/add-book")
+    public ResponseEntity addedBlog(@PathParam("titleBook") String titleBook,
+                                    @PathParam("descBook") String descBook,
+                                    @PathParam("firstImgBook")String firstImgBook,
+                                    @PathParam("secondImgBook") String secondImgBook,
+                                    @PathParam("authorIdBook")String authorIdBook){
+        System.out.println(titleBook);
+        System.out.println(descBook);
+        System.out.println(firstImgBook);
+        System.out.println(secondImgBook);
+        System.out.println(authorIdBook);
+        return new ResponseEntity(HttpStatus.OK);
     }
 
     @RequestMapping("/book/delete/{id}")

@@ -31,9 +31,19 @@ public class NavigationController {
         return "view/all-book";
     }
 
+    @RequestMapping("/book/added")
+    public String addBookPage(){
+        return "view/add-book";
+    }
+
     @RequestMapping("/blog")
     public String blogPage(){
         return "view/all-blog";
+    }
+
+    @RequestMapping("/blog/added")
+    public String addBlogPage(){
+        return "view/add-blog";
     }
 
     @RequestMapping("/user-active")
