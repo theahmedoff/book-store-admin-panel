@@ -8,11 +8,11 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+
 public interface UserService extends UserDetailsService {
 
     List<User> getAllUser();
-    User getUserByUsername(String username);
+    User getUserByUsername(String email);
     List<User> getUserByStatus(int status);
 
     @Override

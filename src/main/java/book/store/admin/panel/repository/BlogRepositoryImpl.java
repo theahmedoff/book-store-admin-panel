@@ -22,7 +22,7 @@ public class BlogRepositoryImpl implements BlogRepository {
 
     //Sql Sorgular
     private static final String GET_ALL_BLOG_SQL = "select b.id_blog, b.title, b.desc, b.share_date, b.image_path, u.id_user, u.username from blog b inner join user u on b.id_user = u.id_user";
-    private static final String SET_BLOG_SQL = "insert into blog(title, desc, share_date, image_path, id_user) values(?, ?, ?, ?, ?)";
+    private static final String SET_BLOG_SQL = "insert into blog(title, `desc`, share_date, image_path, id_user) values(?, ?, ?, ?, ?)";
 
     @Override
     public List<Blog> getAllBlog() {

@@ -48,12 +48,18 @@ function addBook() {
     var descBook = $('#descBook').val();
     var firstImgBook = $('#firstImgBook').val();
     var secondImgBook = $('#secondImgBook').val();
-    var authorIdBook = $('#authorIdBook').val();
+    var authorNameBook = $('#authorNameBook').val();
+    var langBook = $('#langBook').val();
+    var priceBook = $('#priceBook').val();
+    var quantityBook = $('#quantityBook').val();
+    var discountBook = $('#discountBook').val();
+    var ageRangeBook = $('#ageRangeBook').val();
 
     $.ajax({
         type: 'POST',
         url: '/book/add-book',
-        data: {titleBook: titleBook, descBook: descBook, firstImgBook: firstImgBook, secondImgBook: secondImgBook, authorIdBook: authorIdBook},
+        data: {titleBook: titleBook, descBook: descBook, firstImgBook: firstImgBook, secondImgBook: secondImgBook, authorNameBook: authorNameBook,
+            langBook: langBook, priceBook: priceBook, quantityBook: quantityBook, discountBook: discountBook, ageRangeBook: ageRangeBook},
         success: function () {
             alert("Success");
         },

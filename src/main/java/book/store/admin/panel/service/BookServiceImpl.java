@@ -1,6 +1,7 @@
 package book.store.admin.panel.service;
 
 import book.store.admin.panel.model.Book;
+import book.store.admin.panel.model.Stock;
 import book.store.admin.panel.repository.BookRepository;
 import book.store.admin.panel.repository.BookRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +25,8 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public void addBook(Book book) {
-        bookRepository.addBook(book);
+    public void addBook(Stock stock) {
+        bookRepository.addBook(stock);
     }
 
     @Override

@@ -8,7 +8,7 @@ import java.util.List;
 public interface UserRepository {
 
     List<User> getAllUser();
-    User getUserByUsername(String username);
+    User getUserByUsername( String username);
     List<User> getUserByStatus(int status);
 
 }

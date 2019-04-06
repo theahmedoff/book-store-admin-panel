@@ -1,17 +1,12 @@
 package book.store.admin.panel.controller;
 
-import book.store.admin.panel.model.Blog;
-import book.store.admin.panel.model.Book;
 import book.store.admin.panel.model.User;
-import book.store.admin.panel.service.BlogService;
-import book.store.admin.panel.service.BookService;
 import book.store.admin.panel.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import sun.plugin.liveconnect.SecurityContextHelper;
 
 import java.util.List;
 
@@ -31,7 +26,7 @@ public class NavigationController {
         return "view/all-book";
     }
 
-    @RequestMapping("/book/added")
+    @RequestMapping("/book-added")
     public String addBookPage(){
         return "view/add-book";
     }
@@ -41,7 +36,7 @@ public class NavigationController {
         return "view/all-blog";
     }
 
-    @RequestMapping("/blog/added")
+    @RequestMapping("/blog-added")
     public String addBlogPage(){
         return "view/add-blog";
     }

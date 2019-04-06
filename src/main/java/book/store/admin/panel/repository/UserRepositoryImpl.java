@@ -21,7 +21,7 @@ public class UserRepositoryImpl implements UserRepository {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    private static final String GET_USER_BY_USERNAME_SQL = "select * from user u inner join role r on u.id_role = r.id_role left join wishlist w on u.id_user = w.id_user where u.username = ?";
+    private static final String GET_USER_BY_USERNAME_SQL = "select u.id_user, u.name, u.surname, u.password, u.username, u.email, u.status, r.id_role, r.role_type from user u inner join role r on u.id_role = r.id_role where u.username = ?";
     private static final String GET_USER_BY_STATUS_SQL = "select u.id_user, u.name, u.surname, u.username, u.email, u.status, r.id_role, r.role_type from user u inner join role r on u.id_role = r.id_role where u.status = ?";
     private static final String GET_ALL_USER_SQL = "select u.id_user, u.name, u.surname, u.username, u.email, u.status, r.id_role, r.role_type from user u inner join role r on u.id_role = r.id_role";
 
@@ -40,6 +40,7 @@ public class UserRepositoryImpl implements UserRepository {
                     user.setUsername(rs.getString("username"));
                     user.setEmail(rs.getString("email"));
                     user.setStatus(rs.getInt("status"));
+                    user.setPassword(rs.getString("password"));
 
                     Role role = new Role();
                     role.setIdRole(rs.getInt("id_role"));
@@ -73,8 +74,8 @@ public class UserRepositoryImpl implements UserRepository {
                         user.setSurname(rs.getString("u.surname"));
                         user.setUsername(rs.getString("u.username"));
                         user.setEmail(rs.getString("u.email"));
-                        user.setPassword(rs.getString("u.password"));
                         user.setStatus(rs.getInt("u.status"));
+                        user.setPassword(rs.getString("u.password"));
 
                         Role role = new Role();
                         role.setIdRole(rs.getInt("r.id_role"));
